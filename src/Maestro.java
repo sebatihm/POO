@@ -1,13 +1,27 @@
 public class Maestro {
     //Atributos
-    static int id = 0;
+    public static int ID = 1;
+    int id;
     String nombre;
     String especialidad;
 
     // cONSTRUCTOR
     Maestro(){
         System.out.println("Hola me accione primero");
-        id++;
+        id = ID++;
+    }
+
+    public Maestro(String nombre, String especialidad) {
+        System.out.println("Hola sobrecarga con 2 parametros");
+        this.nombre = nombre;
+        this.especialidad = especialidad;
+        id = ID++;
+    }
+
+    public Maestro(String nombre) {
+        System.out.println("Hola sobrecarga con 1 parametro");
+        this.nombre = nombre;
+        id = ID++;
     }
 
     //Comportamientos / metodos
