@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Maestro {
     //Atributos
@@ -57,18 +58,48 @@ public class Maestro {
         this.especialidad = especialidad;
     }
 
+    public ArrayList<TutoriasDisponibles> getTutoriasDisponibles(){
+        return tutoriasDisponibles;
+    }
+
     ArrayList<TutoriasDisponibles> tutoriasDisponibles = new ArrayList<>();
+
+    public void addCursoDisponible(Date fecha,String hora){
+        tutoriasDisponibles.add(new TutoriasDisponibles(fecha,hora));
+    }
 
     public static class TutoriasDisponibles{
         private int id;
         private Date fecha;
         private String hora;
 
-        public TutoriasDisponibles(int id, Date fecha, String hora) {
-            this.id = id;
+        public TutoriasDisponibles(Date fecha, String hora) {
             this.fecha = fecha;
             this.hora = hora;
         }
 
+        public int getId() {
+            return id;
+        }
+
+        public void setId(int id) {
+            this.id = id;
+        }
+
+        public Date getFecha() {
+            return fecha;
+        }
+
+        public void setFecha(Date fecha) {
+            this.fecha = fecha;
+        }
+
+        public String getHora() {
+            return hora;
+        }
+
+        public void setHora(String hora) {
+            this.hora = hora;
+        }
     }
 }
