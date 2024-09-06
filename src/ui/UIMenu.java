@@ -10,7 +10,7 @@ public class UIMenu {
             System.out.println("..:: Bienvenido ::..");
             System.out.println("Selecciona una opcion:");
             System.out.println("1. Maestros");
-            System.out.println("2. Estudiantes");
+            System.out.println("2. Estudiante");
             System.out.println("0. Salir");
 
 
@@ -40,7 +40,7 @@ public class UIMenu {
     public static void estudianteMenu(){
         int respuesta = 0;
         do{
-            System.out.println("..:: Estudiantes ::..");
+            System.out.println("..:: Estudiante ::..");
             System.out.println("1. Agendar tutoria");
             System.out.println("2. Mis tutorias");
             System.out.println("0. Cancelar");

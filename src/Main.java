@@ -32,10 +32,8 @@ public class Main {
 //
 //        Calculadora.suma(num1, num2);
 //        Calculadora.suma(num1, num2, num3);
-        Maestro maestro = new Maestro();
-
-        maestro.nombre = "Morales";
-
+        Calculadora.ClaseAnidada cal = new Calculadora.ClaseAnidada();
+        cal.mostrarNumero();
 
 
     }
