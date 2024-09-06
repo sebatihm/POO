@@ -1,53 +1,43 @@
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Maestro {
-    //Atributos
-    public static int ID = 1;
-    private int id;
-    private String nombre;
+public class Maestro extends Usuario {
+    //Atributo
+    private String numPersonal;
     private String especialidad;
+    ArrayList<TutoriasDisponibles> tutoriasDisponibles = new ArrayList<>();
+
 
     // cONSTRUCTOR
     Maestro(){
         System.out.println("Hola me accione primero");
-        id = ID++;
+
     }
 
     public Maestro(String nombre, String especialidad) {
         System.out.println("Hola sobrecarga con 2 parametros");
-        this.nombre = nombre;
         this.especialidad = especialidad;
-        id = ID++;
+
     }
 
     public Maestro(String nombre) {
         System.out.println("Hola sobrecarga con 1 parametro");
-        this.nombre = nombre;
-        id = ID++;
+        super.setNombre(nombre);
+
     }
 
     //Comportamientos / metodos
     public void mostrarNombre(){
-        System.out.println("Nombre: " + nombre);
+        System.out.println("Nombre: " + super.getNombre());
     }
 
     //Get and Set
-
-    public int getId() {
-        return id;
+    public String getNumPersonal() {
+        return numPersonal;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNumPersonal(String numPersonal) {
+        this.numPersonal = numPersonal;
     }
 
     public String getEspecialidad() {
@@ -58,11 +48,14 @@ public class Maestro {
         this.especialidad = especialidad;
     }
 
+    public void setTutoriasDisponibles(ArrayList<TutoriasDisponibles> tutoriasDisponibles) {
+        this.tutoriasDisponibles = tutoriasDisponibles;
+    }
+
     public ArrayList<TutoriasDisponibles> getTutoriasDisponibles(){
         return tutoriasDisponibles;
     }
 
-    ArrayList<TutoriasDisponibles> tutoriasDisponibles = new ArrayList<>();
 
     public void addCursoDisponible(Date fecha,String hora){
         tutoriasDisponibles.add(new TutoriasDisponibles(fecha,hora));

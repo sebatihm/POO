@@ -1,13 +1,10 @@
-public class Estudiante {
-    public String nombre;
-    public String correo;
+public class Estudiante extends Usuario{
     public String matricula;
-    public String telefono;
     public String semestre;
 
-    public Estudiante(String nombre, String correo) {
-        this.nombre = nombre;
-        this.correo = correo;
+    public Estudiante() {
+        super();
+
     }
 
 
