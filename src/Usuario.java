@@ -9,8 +9,18 @@ public class Usuario {
         this.telefono = telefono;
 
     }
+
+    public Usuario(String nombre, String correo) {
+        this.nombre = nombre;
+        this.correo = correo;
+    }
+
     public Usuario (){
 
+    }
+
+    public Usuario (String nombre){
+        this.nombre = nombre;
     }
 
     public String getNombre() {
@@ -36,4 +46,11 @@ public class Usuario {
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
+
+    @Override
+    public String toString() {
+        return "Nombre: " + nombre + ", Correo: " + correo ;
+    }
+
+
 }

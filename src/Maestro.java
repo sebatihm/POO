@@ -3,22 +3,31 @@ import java.util.Date;
 
 public class Maestro extends Usuario {
     //Atributo
-    private String numPersonal;
+    private int numPersonal;
     private String especialidad;
     ArrayList<TutoriasDisponibles> tutoriasDisponibles = new ArrayList<>();
 
 
     // cONSTRUCTOR
-    Maestro(){
-        System.out.println("Hola me accione primero");
+
+
+    public Maestro(String nombre, int numPersonal) {
+        super(nombre);
+        this.numPersonal = numPersonal;
 
     }
 
-    public Maestro(String nombre, String especialidad) {
-        System.out.println("Hola sobrecarga con 2 parametros");
-        this.especialidad = especialidad;
+    public Maestro(String nombre, String correo) {
+        super(nombre,correo);
 
     }
+
+    public Maestro(String nombre, String correo,int numPersonal) {
+        super(nombre,correo);
+        this.numPersonal = numPersonal;
+
+    }
+
 
     public Maestro(String nombre) {
         System.out.println("Hola sobrecarga con 1 parametro");
@@ -32,11 +41,11 @@ public class Maestro extends Usuario {
     }
 
     //Get and Set
-    public String getNumPersonal() {
+    public int getNumPersonal() {
         return numPersonal;
     }
 
-    public void setNumPersonal(String numPersonal) {
+    public void setNumPersonal(int numPersonal) {
         this.numPersonal = numPersonal;
     }
 
@@ -57,7 +66,7 @@ public class Maestro extends Usuario {
     }
 
 
-    public void addCursoDisponible(Date fecha,String hora){
+    public void addTutoriasDisponible(Date fecha,String hora){
         tutoriasDisponibles.add(new TutoriasDisponibles(fecha,hora));
     }
 
@@ -94,5 +103,17 @@ public class Maestro extends Usuario {
         public void setHora(String hora) {
             this.hora = hora;
         }
+
+        @Override
+        public String toString() {
+            return "Id: " + id + " Fecha: " + fecha + " Hora: " + hora + "\n";
+        }
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + " Numero de personal: " + numPersonal +
+                "\nTutorias Disponibles: \n"
+                + tutoriasDisponibles.toString();
     }
 }
