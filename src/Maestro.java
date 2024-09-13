@@ -116,4 +116,9 @@ public class Maestro extends Usuario {
                 "\nTutorias Disponibles: \n"
                 + tutoriasDisponibles.toString();
     }
+
+    @Override
+    public void saludar(){
+
+    }
 }

@@ -13,5 +13,14 @@ public class Estudiante extends Usuario{
 
     }
 
+    @Override
+    public String toString() {
+        return super.toString() + ", Matricula: " + matricula ;
+    }
+
+    @Override
+    public void saludar(){
+
+    }
 
 }
