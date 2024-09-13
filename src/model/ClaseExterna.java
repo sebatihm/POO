@@ -1,3 +1,5 @@
+package model;
+
 public class ClaseExterna {
     private String nombre = "Morales";
 

@@ -1,3 +1,5 @@
+package model;
+
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -70,43 +72,9 @@ public class Maestro extends Usuario {
         tutoriasDisponibles.add(new TutoriasDisponibles(fecha,hora));
     }
 
-    public static class TutoriasDisponibles{
-        private int id;
-        private Date fecha;
-        private String hora;
-
-        public TutoriasDisponibles(Date fecha, String hora) {
-            this.fecha = fecha;
-            this.hora = hora;
-        }
-
-        public int getId() {
-            return id;
-        }
-
-        public void setId(int id) {
-            this.id = id;
-        }
-
-        public Date getFecha() {
-            return fecha;
-        }
-
-        public void setFecha(Date fecha) {
-            this.fecha = fecha;
-        }
-
-        public String getHora() {
-            return hora;
-        }
-
-        public void setHora(String hora) {
-            this.hora = hora;
-        }
-
-        @Override
-        public String toString() {
-            return "Id: " + id + " Fecha: " + fecha + " Hora: " + hora + "\n";
+    public static class TutoriasDisponibles extends CitaTutoria {
+        TutoriasDisponibles(Date fecha,String hora){
+            super(fecha,hora);
         }
     }
 

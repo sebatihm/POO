@@ -1,18 +1,22 @@
-import java.sql.SQLOutput;
+import model.Estudiante;
+import model.Maestro;
+
 import java.util.Date;
-import java.util.Scanner;
+
 import static ui.UIMenu.*;
+
 public class Main {
     public static void main(String[] args) {
 
-        Maestro maestro = new Maestro("Morales", "57522", 4444);
+        mostrarMenu();
+        maestros.add(new Maestro("Luis morales", "luismorales04@uv.mx", 55425));
+        maestros.add(new Maestro("Javier Pino", "jpino@uv.mx", 12425));
+        maestros.add(new Maestro("Magdiel Mercado", "mamercado@uv.mx", 54325));
+        maestros.add(new Maestro("Patricia Martinez", "pmartinez@uv.mx", 95785));
 
-        maestro.addCursoDisponible(new Date(),"12: 00");
-        maestro.addCursoDisponible(new Date(),"14: 00");
-        maestro.addCursoDisponible(new Date(),"16: 00");
-
-        System.out.println(maestro);
-
+        estudiantes.add(new Estudiante("Ricardo Landa", "landa@uv.mx", "z123","5to"));
+        estudiantes.add(new Estudiante("Alexis Nava", "landa@uv.mx", "z123","5to"));
+        estudiantes.add(new Estudiante("Emilio Jasso", "landa@uv.mx", "z123","5to"));
 
     }
 

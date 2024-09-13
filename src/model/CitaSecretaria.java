@@ -1,9 +1,10 @@
-import java.io.Serializable;
+package model;
+
 import java.util.Date;
 
-public class CitaMaestro implements IAgendable{
+public class CitaSecretaria implements IAgendable{
     private int id;
-    private Maestro maestro;
+    private Secretaria secretaria;
     private Estudiante estudiante;
     private Date fecha;
     private String hora;
@@ -16,12 +17,12 @@ public class CitaMaestro implements IAgendable{
         this.id = id;
     }
 
-    public Maestro getMaestro() {
-        return maestro;
+    public Secretaria getSecretaria() {
+        return secretaria;
     }
 
-    public void setMaestro(Maestro maestro) {
-        this.maestro = maestro;
+    public void setSecretaria(Secretaria secretaria) {
+        this.secretaria = secretaria;
     }
 
     public Estudiante getEstudiante() {
@@ -50,7 +51,8 @@ public class CitaMaestro implements IAgendable{
 
     @Override
     public void agendar(Date fecha, String hora) {
-        this.fecha = fecha;
-        this.hora = hora;
+
     }
+
+
 }
