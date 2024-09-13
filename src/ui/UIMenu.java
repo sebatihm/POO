@@ -15,7 +15,9 @@ public class UIMenu {
     public static ArrayList<Maestro> maestros = new ArrayList<>();
     public static ArrayList<Secretaria> secretarias = new ArrayList<>();
     public static ArrayList<Estudiante> estudiantes = new ArrayList<>();
-
+    public static Maestro maestroLogueado;
+    public static Secretaria secretariaLogueado;
+    public static Estudiante estudianteLogueado;
     public static void mostrarMenu(){
         int respuesta = 0;
         do{
@@ -57,20 +59,55 @@ public class UIMenu {
         // Maestro 1
         // Estudiante 2
         // Secretaria 3
+        boolean bandera = true;
         Scanner sc = new Scanner(System.in);
-        System.out.print("Ingresa tu correo: ");
-        String correoUsuario = sc.nextLine();
 
-        if(tipoUsuario == 1){
-            for(Maestro maestro : maestros){
-                if(maestro.getCorreo().equals(correoUsuario)){
-                    // Maestro encontrado
-                    System.out.println("Hola maestro" + maestro.getNombre());
-                    maestroMenu();
+        do{
 
+            System.out.print("Ingresa tu correo: ");
+            String correoUsuario = sc.nextLine();
+
+            if(tipoUsuario == 1){
+                for(Maestro maestro : maestros){
+                    if(maestro.getCorreo().equals(correoUsuario)){
+                        // Maestro encontrado
+                        System.out.println("Hola maestro" + maestro.getNombre());
+                        bandera = false;
+                        maestroLogueado = maestro;
+                        maestroMenu();
+
+                    }
                 }
             }
-        }
+
+            if(tipoUsuario == 2){
+                for(Estudiante estudiante : estudiantes){
+                    if(estudiante.getCorreo().equals(correoUsuario)){
+                        // Maestro encontrado
+                        System.out.println("Hola estudiante" + estudiante.getNombre());
+                        bandera = false;
+                        estudianteLogueado = estudiante;
+                        estudianteMenu();
+
+                    }
+                }
+            }
+
+            if(tipoUsuario == 3){
+                for(Secretaria secretaria : secretarias){
+                    if(secretaria.getCorreo().equals(correoUsuario)){
+                        // Maestro encontrado
+                        System.out.println("Hola Secretaria" + secretaria.getNombre());
+                        bandera = false;
+                        secretariaLogueado = secretaria;
+                        secretariaMenu();
+
+                    }
+                }
+            }
+
+        }while(bandera);
+
     }
 
 

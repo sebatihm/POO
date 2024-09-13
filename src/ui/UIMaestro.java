@@ -18,10 +18,10 @@ public class UIMaestro {
            respuesta = sc.nextInt();
            switch (respuesta){
                case 1:
-                   System.out.println("Agregar un curso:");
+                   agregarTutoria();
                    break;
                case 2:
-                   System.out.println("Listar un curso:");
+                   listarCursos();
                    break;
                case 3:
                    mostrarMenu();
@@ -32,4 +32,21 @@ public class UIMaestro {
            }
        }while(respuesta!=0);
     }
+
+    public static void agregarTutoria(){
+        System.out.println("Agregar Tutoria");
+        System.out.println("Ingrese la fecha del curso: [dd/mm/yyyy]");
+        Scanner sc = new Scanner(System.in);
+        String fecha = sc.nextLine();
+        System.out.println("Ingrese la hora: [00:00]");
+        String hora = sc.nextLine();
+
+
+    }
+
+    public static void listarCursos(){
+        System.out.println("Listado de cursos");
+    }
+
+
 }
