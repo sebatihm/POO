@@ -1,5 +1,7 @@
 package ui;
 
+import model.Maestro;
+
 import java.util.Scanner;
 
 public class UIEstudiantes {
@@ -19,19 +21,13 @@ public class UIEstudiantes {
 
             switch(respuesta){
                 case 1:
-                    System.out.println("..:: Agendar tutoria ::..");
-                    System.out.println("Selecciona una opcion:");
-                    for(int i = 0; i < 5; i++){
-                        System.out.println(i + ". " + meses[i]);
-
-                    }
+                    agendarTutoria();
                     break;
                 case 2:
-                    System.out.println("..:: Mis tutorias ::..");
+                    listarMisTutorias();
                     break;
                 case 0:
                     System.out.println("Bye.");
-                    System.exit(0);
                     break;
                 default:
                     System.out.println("Por favor seleccione una respuesta valida");
@@ -42,4 +38,12 @@ public class UIEstudiantes {
         } while (respuesta != 0);
     }
 
+    public static void agendarTutoria(){
+        System.out.println("..:: Agendar tutoria ::..");
+
+    }
+
+    public static void listarMisTutorias(){
+
+    }
 }

@@ -68,12 +68,12 @@ public class Maestro extends Usuario {
     }
 
 
-    public void addTutoriasDisponible(Date fecha,String hora){
+    public void addTutoriasDisponible(String fecha,String hora){
         tutoriasDisponibles.add(new TutoriasDisponibles(fecha,hora));
     }
 
     public static class TutoriasDisponibles extends CitaTutoria {
-        TutoriasDisponibles(Date fecha,String hora){
+        TutoriasDisponibles(String fecha,String hora){
             super(fecha,hora);
         }
     }

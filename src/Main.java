@@ -1,5 +1,6 @@
 import model.Estudiante;
 import model.Maestro;
+import ui.UIMaestro;
 
 import java.util.Date;
 
