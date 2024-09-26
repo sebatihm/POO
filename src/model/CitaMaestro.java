@@ -1,5 +1,6 @@
 package model;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class CitaMaestro implements IAgendable{
@@ -8,6 +9,7 @@ public class CitaMaestro implements IAgendable{
     private Estudiante estudiante;
     private Date fecha;
     private String hora;
+    SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
 
     CitaMaestro(Maestro maestro, Estudiante estudiante) {
         this.maestro = maestro;
@@ -38,7 +40,7 @@ public class CitaMaestro implements IAgendable{
         this.estudiante = estudiante;
     }
 
-    public Date getFecha() {
+    public Date getFechaa() {
         return fecha;
     }
 
@@ -54,9 +56,19 @@ public class CitaMaestro implements IAgendable{
         this.hora = hora;
     }
 
+    public String getFecha() {
+        String fechas = formato.format(fecha);
+        return fechas;
+    }
+
     @Override
     public void agendar(Date fecha, String hora) {
         this.fecha = fecha;
         this.hora = hora;
+    }
+
+    @Override
+    public String toString() {
+        return maestro.getNombre() + " " + getFecha() + " " + getHora();
     }
 }

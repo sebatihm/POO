@@ -20,8 +20,14 @@ public class Estudiante extends Usuario{
     }
 
     public void addCitaMaestro(Maestro maestro, Date fecha, String hora) {
-        tutoriasAgendadas.add(new CitaMaestro(maestro,this));
+        CitaMaestro citaMaestro = new CitaMaestro(maestro, this);
+        citaMaestro.agendar(fecha,hora);
+        tutoriasAgendadas.add(citaMaestro);
 
+    }
+
+    public ArrayList<CitaMaestro> getTutoriasAgendadas() {
+        return tutoriasAgendadas;
     }
     @Override
     public String toString() {

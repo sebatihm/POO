@@ -28,11 +28,11 @@ public class Main {
         maestros.add(new Maestro("Patricia Martinez", "pmartinez@uv.mx", 95785));
 
         estudiantes.add(new Estudiante("Ricardo Landa", "landa@uv.mx", "z123","5to"));
-        estudiantes.add(new Estudiante("Alexis Nava", "landa@uv.mx", "z123","5to"));
-        estudiantes.add(new Estudiante("Emilio Jasso", "landa@uv.mx", "z123","5to"));
+        estudiantes.add(new Estudiante("Alexis Nava", "alex@uv.mx", "z123","5to"));
+        estudiantes.add(new Estudiante("Emilio Jasso", "emilio@uv.mx", "z123","5to"));
 
-        //mostrarMenu();
-        UIEstudiantes.agendarTutoria();
+        mostrarMenu();
+        //UIEstudiantes.listarMisTutorias();
     }
 
 

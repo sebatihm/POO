@@ -1,7 +1,9 @@
 package ui;
 
+import model.CitaMaestro;
 import model.Maestro;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class UIEstudiantes {
@@ -10,7 +12,7 @@ public class UIEstudiantes {
     public static void estudianteMenu(){
         int respuesta = 0;
         do{
-            System.out.println("..:: model.Estudiante ::..");
+            System.out.println("..:: Estudiante ::..");
             System.out.println("1. Agendar tutoria");
             System.out.println("2. Mis tutorias");
             System.out.println("0. Cancelar");
@@ -72,6 +74,7 @@ public class UIEstudiantes {
 
             if(respuestaConfirmacion == 1){
                 Maestro.TutoriasDisponibles ts = maestroSeleccionado.getTutoriasDisponibles().get(tutoriaSeleccionado-1);
+                System.out.println(ts);
                 UIMenu.estudianteLogueado.addCitaMaestro(maestroSeleccionado,ts.getDate(), ts.getHora());
             }
 
@@ -86,6 +89,17 @@ public class UIEstudiantes {
     }
 
     public static void listarMisTutorias(){
+        System.out.println("..:: Mis tutorias ::..");
+        ArrayList<CitaMaestro> misTutorias = UIMenu.estudianteLogueado.getTutoriasAgendadas();
+        if(!misTutorias.isEmpty()){
+            int i = 1;
+            for(CitaMaestro cita: misTutorias){
+                System.out.println(i + ".- " +cita);
+                i++;
+            }
+        } else {
+            System.out.println("Esta vacio");
+        }
 
     }
 }
