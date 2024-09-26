@@ -27,7 +27,7 @@ public class CitaTutoria {
         this.id = id;
     }
 
-    public Date getFecha(Date fecha) {
+    public Date getDate() {
         return fecha;
     }
 
